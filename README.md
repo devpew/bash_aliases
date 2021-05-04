@@ -314,10 +314,10 @@ function cdf() {
         echo 'No Finder window found' >&2
     fi
 }
+```
 
-
-Run make from a sub-directory of a project.
-
+### Run make from a sub-directory of a project.
+```
 mk (){
         if [ $PWD == "/" ]; then
                 echo "FAILED :("
