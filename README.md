@@ -1,7 +1,9 @@
 # bash_aliases
 
 ### clear
+```
 alias c='clear'
+```
 
 ### passwordstore for insert new passrord
 alias p='pass insert -m'
