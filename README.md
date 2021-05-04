@@ -1,9 +1,9 @@
 # bash_aliases
 
-# clear
+### clear
 alias c='clear'
 
-# passwordstore for insert new passrord
+### passwordstore for insert new passrord
 alias p='pass insert -m'
 
 # extended ls
