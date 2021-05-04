@@ -233,3 +233,57 @@ alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && kil
 ```
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 ```
+
+### Brew update
+```
+alias brewupdate='brew update && brew upgrade --all && brew cask update && brew cleanup && brew cask cleanup'
+```
+
+### MAC OS Recursively delete those annoying .DS_Store files.
+```
+alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
+```
+
+### Extract the contents of a .tar file.
+```
+alias untar='tar -xvf'
+```
+
+### Print out the local IP on en0.
+```
+alias iplocal='ifconfig en0 | grep --word-regexp inet | awk "{print $2}"'
+```
+
+### Print out the public ip address.
+```
+alias ippub="dig +short myip.opendns.com @resolver1.opendns.com"
+```
+
+### Generate a random 20 character password using OpenSSL.
+```
+alias randpass="openssl rand -base64 20"
+```
+
+### extract anything
+
+```
+extract () {
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)  tar xjf $1    ;;
+      *.tar.gz) tar xzf $1    ;;
+      *.bz2)    bunzip2 $1    ;;
+      *.rar)    rar x $1    ;;
+      *.gz)   gunzip $1   ;;
+      *.tar)    tar xf $1   ;;
+      *.tbz2)   tar xjf $1    ;;
+      *.tgz)    tar xzf $1    ;;
+      *.zip)    unzip $1    ;;
+      *.Z)    uncompress $1 ;;
+      *)      echo "'$1' cannot be extracted via extract()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+```
