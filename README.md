@@ -113,6 +113,7 @@ alias gpg-export-secret='gpg --export-secret-key -a '
 #alias gcm='git commit -m'
 #alias gb='git branch'
 alias mergemaster='git checkout master; git pull; git merge develop; git push; git checkout develop'
+alias gfr='git fetch upstream && git rebase upstream/master'
 ```
 
 ### NPM
