@@ -90,3 +90,35 @@ alias psmem10='ps auxf | sort -nr -k 4 | head -10'
 alias pscpu='ps auxf | sort -nr -k 3'
 alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 ```
+
+### GPG
+```
+alias gpg-secret='gpg -K '
+alias gpg-public='gpg -k '
+alias gpg-new='gpg --full-gen-key && echo "keyid-format 0xlong
+alias gpg-encrypt='gpg -e -a -r '
+alias gpg-decrypt='gpg -d -o '
+alias gpg-export-public='gpg --export -a '
+alias gpg-export-secret='gpg --export-secret-key -a '
+```
+
+### Git
+#alias gs='git status'
+#alias ga='git add'
+#alias ga.='git add .'
+#alias gch='git checkout'
+#alias gchb='git checkout -b'
+#alias gc='git commit'
+#alias gcm='git commit -m'
+#alias gb='git branch'
+
+### Docker
+#alias di='docker images'
+#alias dr='docker run'
+#alias db='docker build' 
+#alias dp='docker ps'
+
+### Golang
+#alias gog='go get'
+#alias gor='go run'
+#alias gob='go build'
