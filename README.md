@@ -1,18 +1,18 @@
 # bash_aliases
 
-//clear
+# clear
 alias c='clear'
 
-//passwordstore for insert new passrord
+# passwordstore for insert new passrord
 alias p='pass insert -m'
 
-//extended ls
+# extended ls
 ll='ls -la'
 
-//ls with hidden files
+# ls with hidden files
 alias l.='ls -d .* --color=auto'
 
-//fast back cd
+# fast back cd
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
@@ -20,10 +20,10 @@ alias .....='cd ../../../../'
 alias .4='cd ../../../../'
 alias .5='cd ../../../../..'
 
-//history
+# history
 alias h='history'
 
-//show pathes
+# show pathes
 alias path='echo -e ${PATH//:/\\n}'
 
 //ping 5 sec
