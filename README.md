@@ -112,6 +112,12 @@ alias gpg-export-secret='gpg --export-secret-key -a '
 #alias gc='git commit'
 #alias gcm='git commit -m'
 #alias gb='git branch'
+alias mergemaster='git checkout master; git pull; git merge develop; git push; git checkout develop'
+```
+
+### NPM
+```
+alias s='npm start'
 ```
 
 ### Docker
@@ -287,3 +293,45 @@ extract () {
   fi
 }
 ```
+
+### Send my Mac to sleep:
+```
+alias sleep="pmset sleep now"
+```
+
+### I'M LOVING IT
+```
+alias fuck='sudo !!'
+```
+
+### MAC OS Change directory to the current Finder directory
+```
+function cdf() {
+    target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+        cd "$target"; pwd
+    else
+        echo 'No Finder window found' >&2
+    fi
+}
+
+
+Run make from a sub-directory of a project.
+
+mk (){
+        if [ $PWD == "/" ]; then
+                echo "FAILED :("
+        elif [ ! -f Makefile ]; then
+                pushd .. > /dev/null
+                mk $*
+                popd > /dev/null
+        else 
+                pwd
+                echo make $*
+                make $*
+        fi
+}
+```
+
+
+
