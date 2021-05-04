@@ -103,6 +103,7 @@ alias gpg-export-secret='gpg --export-secret-key -a '
 ```
 
 ### Git
+```
 #alias gs='git status'
 #alias ga='git add'
 #alias ga.='git add .'
@@ -111,14 +112,124 @@ alias gpg-export-secret='gpg --export-secret-key -a '
 #alias gc='git commit'
 #alias gcm='git commit -m'
 #alias gb='git branch'
+```
 
 ### Docker
+```
 #alias di='docker images'
 #alias dr='docker run'
 #alias db='docker build' 
 #alias dp='docker ps'
+alias dps="docker ps -a"
+alias di="docker images"
+alias drmi="docker rmi"
+alias drm="docker rm"
+```
+
+### Get last Docker container id
+```
+alias d:last="docker ps -lq"
+```
+
+### Open a bash terminal in last Container if arguments are different than 1
+### Open a bash terminal in the container passed through argument 1 (id or name)
+```
+d:bash () {
+  if [ $# != 1 ]; then
+    docker exec -it `d:last` bash
+  else
+    docker exec -it $1 bash
+  fi
+}
+```
+
+
+### With no argument runs a bash terminal in a new ubuntu container(could be specified 
+### any image) with current directory content mapped to '/app' inside container.
+### if an image is passed to the first argument this one will run.
+### if multiples arguments append to the image.
+```
+d:run () {
+  if [ $# == 0 ]; then
+    docker run -it -v `pwd`:/app -w /app --rm buildpack-deps:trusty bash
+  elif [ $# == 1 ]; then
+    docker run -it -v `pwd`:/app -w /app --rm $1 
+  else
+    docker run -it -v `pwd`:/app -w /app --rm $1 ${@:2}
+  fi
+}
+```
+
+### kuber
+```
+alias k="kubectl"
+alias ka="kubectl apply -f"
+alias kpa="kubectl patch -f"
+alias ked="kubectl edit"
+alias ksc="kubectl scale"
+alias kex="kubectl exec -i -t"
+alias kg="kubectl get"
+alias kga="kubectl get all"
+alias kgall="kubectl get all --all-namespaces"
+alias kinfo="kubectl cluster-info"
+alias kdesc="kubectl describe"
+alias ktp="kubectl top"
+alias klo="kubectl logs -f"
+alias kn="kubectl get nodes"
+alias kpv="kubectl get pv"
+alias kpvc="kubectl get pvc"
+
+```
 
 ### Golang
+```
 #alias gog='go get'
 #alias gor='go run'
 #alias gob='go build'
+```
+
+### My IP
+```
+function myip()
+{
+    extIp=$(dig +short myip.opendns.com @resolver1.opendns.com)
+
+    printf "Wireless IP: "
+    MY_IP=$(/sbin/ifconfig wlp4s0 | awk '/inet/ { print $2 } ' |
+      sed -e s/addr://)
+    echo ${MY_IP:-"Not connected"}
+
+
+    printf "Wired IP: "
+    MY_IP=$(/sbin/ifconfig enp0s25 | awk '/inet/ { print $2 } ' |
+      sed -e s/addr://)
+    echo ${MY_IP:-"Not connected"}
+
+    echo ""
+    echo "WAN IP: $extIp"
+
+}
+```
+
+### REPEAT
+```
+function repeat()      
+{
+    local i max
+    max=$1; shift;
+    for ((i=1; i <= max ; i++)); do  # --> C-like syntax
+        eval "$@";
+    done
+}
+```
+
+### Show/hide hidden files in the macOS Finder
+```
+alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
+alias hide="defaults write com.apple.finder AppleShowAllFiles -bool false && killall Finder"
+```
+
+### This Ubuntu default is great for sending notifications when a long running command exits:
+```
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+```
