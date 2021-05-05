@@ -115,6 +115,15 @@ alias gpg-export-secret='gpg --export-secret-key -a '
 alias mergemaster='git checkout master; git pull; git merge develop; git push; git checkout develop'
 alias gfr='git fetch upstream && git rebase upstream/master'
 ```
+### GIT add, commit, push
+```
+function acp() {
+git add .
+git commit -m "$1"
+git push
+}
+```
+
 
 ### NPM
 ```
@@ -185,7 +194,6 @@ alias klo="kubectl logs -f"
 alias kn="kubectl get nodes"
 alias kpv="kubectl get pv"
 alias kpvc="kubectl get pvc"
-
 ```
 
 ### Golang
