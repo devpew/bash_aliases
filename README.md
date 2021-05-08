@@ -1,5 +1,12 @@
 # bash_aliases
 
+### fav
+```sh
+alias mv="mv -iv"
+alias cp="cp -riv"
+alias mkdir="mkdir -vp"
+```
+
 ### clear
 ```sh
 alias c='clear'
