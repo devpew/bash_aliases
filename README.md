@@ -19,7 +19,7 @@ alias p='pass insert -m'
 
 ### extended ls
 ```sh
-ll='ls -la'
+alias ll='ls -la'
 ```
 
 ### ls with hidden files
@@ -102,7 +102,7 @@ alias pscpu10='ps auxf | sort -nr -k 3 | head -10'
 ```sh
 alias gpg-secret='gpg -K '
 alias gpg-public='gpg -k '
-alias gpg-new='gpg --full-gen-key && echo "keyid-format 0xlong
+alias gpg-new='gpg --full-gen-key && echo "keyid-format 0xlong"'
 alias gpg-encrypt='gpg -e -a -r '
 alias gpg-decrypt='gpg -d -o '
 alias gpg-export-public='gpg --export -a '
