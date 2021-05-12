@@ -202,9 +202,9 @@ alias kpvc="kubectl get pvc"
 
 ### Golang
 ```sh
-#alias gog='go get'
-#alias gor='go run'
-#alias gob='go build'
+alias gog='go get'
+alias gor='go run'
+alias gob='go build'
 ```
 
 ### My IP
