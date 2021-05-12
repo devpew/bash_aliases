@@ -111,14 +111,14 @@ alias gpg-export-secret='gpg --export-secret-key -a '
 
 ### Git
 ```sh
-#alias gs='git status'
-#alias ga='git add'
-#alias ga.='git add .'
-#alias gch='git checkout'
-#alias gchb='git checkout -b'
-#alias gc='git commit'
-#alias gcm='git commit -m'
-#alias gb='git branch'
+alias gs='git status'
+alias ga='git add'
+alias ga.='git add .'
+alias gch='git checkout'
+alias gchb='git checkout -b'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gb='git branch'
 alias mergemaster='git checkout master; git pull; git merge develop; git push; git checkout develop'
 alias gfr='git fetch upstream && git rebase upstream/master'
 ```
