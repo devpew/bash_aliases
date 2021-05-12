@@ -139,10 +139,10 @@ alias s='npm start'
 
 ### Docker
 ```sh
-#alias di='docker images'
-#alias dr='docker run'
-#alias db='docker build' 
-#alias dp='docker ps'
+alias di='docker images'
+alias dr='docker run'
+alias db='docker build' 
+alias dp='docker ps'
 alias dps="docker ps -a"
 alias di="docker images"
 alias drmi="docker rmi"
