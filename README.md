@@ -12,7 +12,7 @@ alias mkdir="mkdir -vp"
 alias c='clear'
 ```
 
-### passwordstore for insert new passrord
+### passwordstore for insert new password
 ```sh
 alias p='pass insert -m'
 ```
